@@ -1,10 +1,20 @@
 from datetime import datetime, timedelta
 import yfinance as yf
 import pandas as pd
+import sys
 
-# 1. Danh sách tickers (thay đổi nếu cần)
-tickers_list = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA',
-                'NVDA', 'META', 'JPM', 'V', 'JNJ']
+# 1. Danh sách default nếu không nhập gì
+default_tickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA',
+                   'NVDA', 'META', 'JPM', 'V', 'JNJ']
+
+# Nếu không nhập gì -> dùng default
+# Nếu có nhập -> dùng danh sách user cung cấp
+if len(sys.argv) > 1:
+    tickers_list = sys.argv[1:]
+    print("Tickers nhận từ terminal:", tickers_list)
+else:
+    tickers_list = default_tickers
+    print("Không nhập ticker → dùng default:", tickers_list)
 
 print(f"Bắt đầu tải dữ liệu cho {len(tickers_list)} tickers...")
 
