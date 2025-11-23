@@ -33,7 +33,7 @@ try:
         print(data.head())
 
         # 4. Lưu DataFrame vào file CSV (thay đường dẫn nếu cần)
-        file_name = "/Users/nguyenphuoc/Documents/computation_finance/du_lieu_10_tickers_2015-10-01__2025-10-01.csv"
+        file_name = "du_lieu_10_tickers_2015-10-01__2025-10-01.csv"
         data.to_csv(file_name)
         print(f"\nĐã lưu thành công dữ liệu vào file: {file_name}")
 
